@@ -8,9 +8,12 @@ import {
   Pressable,
   Modal,
   StatusBar,
+  ActivityIndicator,
+  Alert,
 } from "react-native";
 import { useState } from "react";
 const logoImg = require("./assets/adaptive-icon.png");
+import Greet from "./components/Greet";
 
 export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -32,6 +35,7 @@ export default function App() {
         onPress={() => setIsStatusbarHidden((prevState) => !prevState)}
         color="midnightblue"
       />
+      <ActivityIndicator size="large" color="magenta" animating={true} />
       <ScrollView>
         {/* <ImageBackground source={logoImg} style={{ flex: 1 }}>
         <Text>
@@ -39,6 +43,29 @@ export default function App() {
           World
         </Text>
       </ImageBackground> */}
+
+        {/* <Button
+          title="Alert"
+          onPress={() => Alert.alert("Invalid data!", "DB connection")}
+        /> */}
+
+        <Greet name="Vova" />
+
+        <Button
+          title="Alert3"
+          onPress={() =>
+            Alert.alert("Invalid data!", "DB connection", [
+              {
+                text: "Cancel",
+                onPress: () => console.log("Canceled pressed"),
+              },
+              {
+                text: "Ok",
+                onPress: () => console.log("Ok pressed"),
+              },
+            ])
+          }
+        />
 
         <Pressable onPress={() => console.log("Image pressed")}>
           <Image source={logoImg} style={{ width: 300, height: 300 }} />
