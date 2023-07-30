@@ -10,6 +10,7 @@ import {
   StatusBar,
   ActivityIndicator,
   Alert,
+  StyleSheet,
 } from "react-native";
 import { useState } from "react";
 const logoImg = require("./assets/adaptive-icon.png");
@@ -24,7 +25,7 @@ export default function App() {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "plum", padding: 60 }}>
+    <View style={styles.container}>
       <StatusBar
         backgroundColor="lightgreen"
         barStyle="dark-content"
@@ -71,7 +72,7 @@ export default function App() {
           <Image source={logoImg} style={{ width: 300, height: 300 }} />
         </Pressable>
         <Pressable onPress={() => console.log("text pressed")}>
-          <Text>
+          <Text style={styles.title}>
             Mollit aliqua id id anim adipisicing anim mollit enim adipisicing eu
             et et. Ex non fugiat nostrud nisi est excepteur sunt commodo sint.
             Duis pariatur ut aliquip quis magna sunt do ut. Mollit aliqua id id
@@ -114,3 +115,10 @@ export default function App() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "plum", padding: 60 },
+  title: {
+    fontSize: 16,
+  },
+});
