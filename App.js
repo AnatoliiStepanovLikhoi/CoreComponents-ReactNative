@@ -9,15 +9,16 @@ export default function App() {
       <Box style={{ backgroundColor: "black" }}>Box 3</Box>
       <Box style={{ backgroundColor: "pink" }}>Box 4</Box>
       <Box style={{ backgroundColor: "tomato" }}>Box 5</Box>
+      <Box style={{ backgroundColor: "plum" }}>Box 6</Box>
+      <Box style={{ backgroundColor: "magenta" }}>Box 7</Box>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap-reverse",
+    flexWrap: "wrap",
+    alignContent: "space-around",
     height: 300,
     marginTop: 64,
     borderWidth: 6,
