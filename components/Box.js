@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: "#fff",
     padding: 20,
-    height: 80,
-    width: 80,
+    // height: 80,
+    // width: 80,
   },
   text: {
     fontSize: 12,
